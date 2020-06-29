@@ -1,2 +1,2 @@
-# FEM_fylo-data-storage-component
-Fylo data storage component (front end mentor challenge #1)
+# Front End Mentor Fylo Data Storage Component
+1st Challenge I did from Front End Mentor.
