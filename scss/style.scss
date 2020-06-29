@@ -1,0 +1,229 @@
+$paleBlue: hsl(243, 100%, 93%);
+$grayishBlue: hsl(229, 7%, 55%);
+$darkBlue: hsl(228, 56%, 26%);
+$veryDarkBlue: hsl(229, 57%, 11%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: $veryDarkBlue;
+}
+
+#triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 40px solid #fff;
+  border-left: 40px solid transparent;
+  display: none;
+  right: 16%;
+  top: 41%;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../images/bg-mobile.png");
+  background-repeat: no-repeat;
+
+  .top-container {
+    background: $darkBlue;
+    padding: 2.5rem;
+    border-radius: 0.75rem 6rem 0.75rem 0.75rem;
+    margin: 0 1rem;
+
+    .icons {
+      display: flex;
+      align-items: center;
+      margin-top: 1.5rem;
+      width: 73%;
+      justify-content: space-between;
+
+      & .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        background: $veryDarkBlue;
+        border-radius: 10px;
+
+        &:nth-child(2) {
+          margin: 0 0.75rem;
+        }
+      }
+    }
+  }
+
+  .bottom-container {
+    background: $darkBlue;
+    padding: 1rem 2.5rem;
+    border-radius: 0.75rem;
+    margin: 1rem;
+    height: 10rem;
+
+    .text {
+      color: $paleBlue;
+      font-size: 14px;
+      text-align: center;
+
+      span {
+        font-weight: 700;
+      }
+    }
+
+    .progress-container {
+      height: 20px;
+      width: 100%;
+      background: $veryDarkBlue;
+      border-radius: 14px;
+      padding: 3px;
+      margin: 1rem 0 1rem 0;
+
+      .progress-bar {
+        width: 75%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          hsl(6, 100%, 80%),
+          hsl(335, 100%, 65%)
+        );
+        border-radius: 14px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .circle {
+          height: 10px;
+          width: 10px;
+          background-color: $paleBlue;
+          border-radius: 10px;
+          margin-right: 2.5px;
+        }
+      }
+    }
+
+    .storage-size {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+
+      p {
+        color: $paleBlue;
+      }
+    }
+
+    .storage-left {
+      position: relative;
+      bottom: -1rem;
+      margin: 0 auto;
+      height: 4.5rem;
+      width: 70%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.75rem;
+
+      p {
+        color: $veryDarkBlue;
+        font-size: 2.5rem;
+        font-weight: 700;
+
+        span {
+          color: $grayishBlue;
+          text-transform: uppercase;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 5px;
+  text-align: center;
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+@media (min-width: 376px) {
+  .container {
+    background-image: url("../images/bg-desktop.png");
+    background-position: right 130%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #triangle {
+    display: block;
+  }
+
+  .container {
+    // background-image: url("../images/bg-desktop.png");
+    // background-repeat: no-repeat;
+    // background-position: bottom;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .top-container {
+      padding: 3rem 2.5rem;
+      width: 27%;
+
+      .icons {
+        width: 60%;
+      }
+    }
+
+    .bottom-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 3rem;
+      height: 27%;
+      width: 45%;
+      justify-content: center;
+      align-items: flex-start;
+
+      .progress-container {
+        height: 1.3rem;
+
+        .progress-bar {
+          .circle {
+            height: 12px;
+            width: 12px;
+          }
+        }
+      }
+
+      .storage-left {
+        position: absolute;
+        width: 15%;
+        height: 10%;
+        top: 33%;
+        right: 16%;
+
+        p {
+          width: 85%;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
